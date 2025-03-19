@@ -1,0 +1,48 @@
+{
+  "kind": "singleType",
+  "collectionName": "intros",
+  "info": {
+    "singularName": "intro",
+    "pluralName": "intros",
+    "displayName": "Intro",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "biography": {
+      "type": "text"
+    },
+    "biography_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "biography_title": {
+      "type": "string"
+    },
+    "personal_history": {
+      "type": "text"
+    },
+    "personal_history_title": {
+      "type": "string"
+    },
+    "personal_history_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

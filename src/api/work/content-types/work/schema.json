@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "works",
+  "info": {
+    "singularName": "work",
+    "pluralName": "works",
+    "displayName": "Movies ",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "movie_banner": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "movie_detail": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::movie-detail.movie-detail",
+      "inversedBy": "movie"
+    }
+  }
+}
