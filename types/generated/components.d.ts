@@ -33,7 +33,7 @@ export interface WorkWorkDetail extends Struct.ComponentSchema {
     icon: 'stack';
   };
   attributes: {
-    description: Schema.Attribute.String;
+    banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     directors: Schema.Attribute.String;
     releaseDate: Schema.Attribute.String;
     soundtrack: Schema.Attribute.Component<'work.soundtrack', true>;

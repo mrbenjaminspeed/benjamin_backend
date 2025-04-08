@@ -13,14 +13,21 @@
       "repeatable": true,
       "component": "work.soundtrack"
     },
-    "description": {
-      "type": "string"
-    },
     "directors": {
       "type": "string"
     },
     "releaseDate": {
       "type": "string"
+    },
+    "banner": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
