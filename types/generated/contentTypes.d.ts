@@ -436,13 +436,13 @@ export interface ApiIntroIntro extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiMovieDetailMovieDetail extends Struct.CollectionTypeSchema {
-  collectionName: 'movie_details';
+export interface ApiMovieMovie extends Struct.CollectionTypeSchema {
+  collectionName: 'movies';
   info: {
     description: '';
-    displayName: 'Movie_detail';
-    pluralName: 'movie-details';
-    singularName: 'movie-detail';
+    displayName: 'Works';
+    pluralName: 'movies';
+    singularName: 'movie';
   };
   options: {
     draftAndPublish: true;
@@ -451,13 +451,12 @@ export interface ApiMovieDetailMovieDetail extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    details: Schema.Attribute.Component<'work.work-detail', true>;
+    displayOrder: Schema.Attribute.Integer;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::movie-detail.movie-detail'
-    > &
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::movie.movie'> &
       Schema.Attribute.Private;
-    movie: Schema.Attribute.Relation<'oneToOne', 'api::work.work'>;
+    poster: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -466,13 +465,13 @@ export interface ApiMovieDetailMovieDetail extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiWorkWork extends Struct.CollectionTypeSchema {
-  collectionName: 'works';
+export interface ApiMyLinkMyLink extends Struct.SingleTypeSchema {
+  collectionName: 'my_links';
   info: {
     description: '';
-    displayName: 'Movies ';
-    pluralName: 'works';
-    singularName: 'work';
+    displayName: 'MyLink';
+    pluralName: 'my-links';
+    singularName: 'my-link';
   };
   options: {
     draftAndPublish: true;
@@ -481,18 +480,16 @@ export interface ApiWorkWork extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    link: Schema.Attribute.Component<'social.links', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::work.work'> &
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::my-link.my-link'
+    > &
       Schema.Attribute.Private;
-    movie_banner: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-    movie_detail: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::movie-detail.movie-detail'
-    >;
     publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1010,8 +1007,8 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::hero.hero': ApiHeroHero;
       'api::intro.intro': ApiIntroIntro;
-      'api::movie-detail.movie-detail': ApiMovieDetailMovieDetail;
-      'api::work.work': ApiWorkWork;
+      'api::movie.movie': ApiMovieMovie;
+      'api::my-link.my-link': ApiMyLinkMyLink;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

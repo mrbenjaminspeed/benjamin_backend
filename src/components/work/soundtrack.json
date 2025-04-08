@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_work_soundtracks",
+  "info": {
+    "displayName": "soundtrack",
+    "icon": "volumeUp"
+  },
+  "options": {},
+  "attributes": {
+    "track": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_work_work_details",
+  "info": {
+    "displayName": "work-detail",
+    "icon": "stack",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "soundtrack": {
+      "displayName": "soundtrack",
+      "type": "component",
+      "repeatable": true,
+      "component": "work.soundtrack"
+    },
+    "description": {
+      "type": "string"
+    },
+    "directors": {
+      "type": "string"
+    },
+    "releaseDate": {
+      "type": "string"
+    }
+  }
+}

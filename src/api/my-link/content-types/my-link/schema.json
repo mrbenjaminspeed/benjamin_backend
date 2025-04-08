@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "my_links",
+  "info": {
+    "singularName": "my-link",
+    "pluralName": "my-links",
+    "displayName": "MyLink",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "link": {
+      "displayName": "links",
+      "type": "component",
+      "repeatable": true,
+      "component": "social.links"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
