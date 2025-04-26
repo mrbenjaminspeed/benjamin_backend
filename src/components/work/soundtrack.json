@@ -2,11 +2,12 @@
   "collectionName": "components_work_soundtracks",
   "info": {
     "displayName": "soundtrack",
-    "icon": "volumeUp"
+    "icon": "volumeUp",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "track": {
+    "tracks": {
       "allowedTypes": [
         "images",
         "files",
@@ -14,10 +15,7 @@
         "audios"
       ],
       "type": "media",
-      "multiple": false
-    },
-    "title": {
-      "type": "string"
+      "multiple": true
     }
   }
 }

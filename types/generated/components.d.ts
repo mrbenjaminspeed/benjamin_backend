@@ -16,12 +16,15 @@ export interface SocialLinks extends Struct.ComponentSchema {
 export interface WorkSoundtrack extends Struct.ComponentSchema {
   collectionName: 'components_work_soundtracks';
   info: {
+    description: '';
     displayName: 'soundtrack';
     icon: 'volumeUp';
   };
   attributes: {
-    title: Schema.Attribute.String;
-    track: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    tracks: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
   };
 }
 
